@@ -1,27 +1,31 @@
-import React from 'react'
-import Link from 'next/link'
-
-const links = [
-  { href: 'https://zeit.co/now', label: 'ZEIT' },
-  { href: 'https://github.com/zeit/next.js', label: 'GitHub' }
-].map(link => {
-  link.key = `nav-link-${link.href}-${link.label}`
-  return link
-})
+import React from "react";
+import Link from "next/link";
+import "../styles/fonts.css";
+import theme from "../styles/theme";
 
 const Nav = () => (
-  <nav>
+  <nav className="main_layout_nav">
     <ul>
       <li>
-        <Link href='/'>
-          <a>Home</a>
+        <Link href="/">
+          <a className="nav_link_home">Home</a>
         </Link>
       </li>
-      {links.map(({ key, href, label }) => (
-        <li key={key}>
-          <a href={href}>{label}</a>
-        </li>
-      ))}
+      <li>
+        <Link href="/">
+          <a>Account</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/">
+          <a>Contact</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/">
+          <a>Cart</a>
+        </Link>
+      </li>
     </ul>
 
     <style jsx>{`
@@ -36,21 +40,35 @@ const Nav = () => (
       ul {
         display: flex;
         justify-content: space-between;
+        margin: 0;
       }
       nav > ul {
-        padding: 4px 16px;
+        padding: 8px 36px 0px;
       }
       li {
         display: flex;
         padding: 6px 8px;
       }
-      a {
-        color: #067df7;
+      a,
+      a:visited {
+        color: ${theme.colors.navlink};
+        cursor: pointer;
         text-decoration: none;
-        font-size: 13px;
+        font-family: ${theme.font.Montserrat};
+        font-size: ${theme.fontSize[6]};
+      }
+      a:hover {
+        color: ${theme.colors.linkHover};
+      }
+      .nav_link_home {
+        font-size: ${theme.fontSize[8]};
+      }
+      .main_layout_nav {
+        background-color: ${theme.colors.background};
+        height: 140px;
       }
     `}</style>
   </nav>
-)
+);
 
-export default Nav
+export default Nav;
