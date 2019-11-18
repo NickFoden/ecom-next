@@ -1,11 +1,14 @@
 import React from "react";
 import Head from "next/head";
-import Nav from "../components/nav";
+import Nav from "../components/Nav";
+import OurStory from "../components/OurStory/OurStory";
+import "../styles/fonts.css";
+import theme from "../styles/theme";
 
 const Home = () => (
   <div>
     <Head>
-      <title>Home</title>
+      <title>E Com</title>
       <link rel="icon" href="/favicon.ico" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
@@ -13,21 +16,28 @@ const Home = () => (
     <Nav />
 
     <div className="hero">
-      <h1 className="title">About Us</h1>
+      <h1>About Us</h1>
+      <h4>
+        An iterative, interactive prototype of an e‑commerce storefront that
+        explores concepts in designing and developing for the web, considering
+        accessibility first.
+      </h4>
     </div>
+    <OurStory />
 
     <style jsx>{`
       .hero {
-        width: 100%;
-        color: #333;
+        font-family: ${theme.font.Montserrat};
+        margin-top: 80px;
+        text-align: left;
+        padding-left: 150px;
+        padding-right: 150px;
       }
-      .title {
-        font-size: 48px;
-        line-height: 1.15;
-        margin: 0;
-        padding-top: 80px;
-        text-align: center;
-        width: 100%;
+      h1 {
+        font-size: ${theme.fontSize[10]};
+      }
+      h4 {
+        font-size: ${theme.fontSize[8]};
       }
     `}</style>
   </div>

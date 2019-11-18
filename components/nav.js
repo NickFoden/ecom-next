@@ -8,7 +8,14 @@ const Nav = () => (
     <ul>
       <li>
         <Link href="/">
-          <a className="nav_link_home">Home</a>
+          <span className="nav_logo_container">
+            <img src="/A.png" alt="Logo of A" className="nav_logo" />
+            <a className="nav_link_home">
+              The <br />
+              Accessible <br />
+              eStore
+            </a>
+          </span>
         </Link>
       </li>
       <li>
@@ -34,16 +41,13 @@ const Nav = () => (
         font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
           Helvetica, sans-serif;
       }
-      nav {
-        text-align: center;
-      }
       ul {
         display: flex;
         justify-content: space-between;
         margin: 0;
       }
       nav > ul {
-        padding: 8px 36px 0px;
+        padding: 32px 36px 0px;
       }
       li {
         display: flex;
@@ -61,11 +65,24 @@ const Nav = () => (
         color: ${theme.colors.linkHover};
       }
       .nav_link_home {
-        font-size: ${theme.fontSize[8]};
+        font-size: ${theme.fontSize[3]};
+        margin-left: 8px;
       }
       .main_layout_nav {
         background-color: ${theme.colors.background};
         height: 140px;
+      }
+      .nav_logo {
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+      }
+      .nav_logo:hover {
+        opacity: 0.7;
+      }
+      .nav_logo_container {
+        display: flex;
+        text-align: left;
       }
     `}</style>
   </nav>

@@ -12,7 +12,8 @@ const theme = {
     6: "24px",
     7: "28px",
     8: "32px",
-    9: "36px"
+    9: "36px",
+    10: "40px"
   },
   colors: {
     background: "#1f1f1f",
@@ -22,7 +23,8 @@ const theme = {
     linkHover: "#0d8ecf",
     border: "#ddd",
     warning: "#fff3cd",
-    success: "#d4edda"
+    success: "#d4edda",
+    backgroundStory: "#f0f2f2"
   }
 };
 
